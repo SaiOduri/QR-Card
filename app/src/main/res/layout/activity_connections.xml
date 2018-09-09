@@ -9,19 +9,21 @@
     android:gravity="center"
     android:orientation="vertical">
 
-    <TextView
+    <ImageView
+        android:src="@drawable/facebook_logo"
         android:id="@+id/facebook_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="108dp"
+        android:layout_height="48dp"
         android:text="Facebook"
         android:focusable="true"
         android:clickable="true"
         android:padding="12dp"/>
 
-    <TextView
+    <ImageView
+        android:src="@drawable/instagram_logo"
         android:id="@+id/instagram_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="108dp"
+        android:layout_height="48dp"
         android:text="Instagram"
         android:focusable="true"
         android:clickable="true"
@@ -47,10 +49,11 @@
         android:clickable="true"
         android:padding="12dp"/>
 
-    <TextView
+    <ImageView
+        android:src="@drawable/myspace"
         android:id="@+id/myspace_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="108dp"
+        android:layout_height="48dp"
         android:text="MySpace"
         android:focusable="true"
         android:clickable="true"
