@@ -68,11 +68,9 @@
         // This enables us to call iOS URL schemes
         // and open directly in app
         var URLS = {
-            Facebook: function(platform) {
-                switch(platform) {
-                    case 1: return "fb://profile?id={user}"
-                    default: return "https://facebook.com/{user}"
-                } 
+            Facebook: {
+                native: "fb://profile?id={user}" ,
+                web: "https://facebook.com/{user}"
             }
         }
 
@@ -87,10 +85,11 @@
     
         if (facebook != undefined) {
             var row = template.replace(/{network}/g, "Facebook")
-            row = row.replace(/{url}/g, URLS.Facebook(platform));
+            row = row.replace(/{url}/g, "fb://profile?id={user}");
             row = row.replace(/{user}/g, facebook);
     
             document.getElementById("container").innerHTML += row;
+
         }
 
         if (instagram != undefined) {
@@ -132,7 +131,7 @@
     
             document.getElementById("container").innerHTML += row;
         }
-    
+
     </script>
     
 </html>
