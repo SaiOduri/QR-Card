@@ -22,21 +22,20 @@ export default class MenuScreen extends React.Component {
   componentDidMount() {
     _retrieveData = async () => {
       try {
-        const value = await AsyncStorage.getItem('TASKS');
-        if (value !== null) {
-          // We have data!!
-          console.log(value);
-        }
+        const fb = await AsyncStorage.getItem('fb');
+        const insta = await AsyncStorage.getItem('insta');
+        const tumblr = await AsyncStorage.getItem('tumblr');
+        const github = await AsyncStorage.getItem('github');
+        const linkedin = await AsyncStorage.getItem('linkedin');
+        const snapchat = await AsyncStorage.getItem('snapchat');
+        const twitter = await AsyncStorage.getItem('twitter');
+
+        this.setState({fb, insta, tumblr, github, linkedin, snapchat, twitter});
        } catch (error) {
-         // Error retrieving data
+         console.log("didn't upload properly: " + error);
        }
     }
   }
-
-  updateAccounts = () => {
-    // fetch data
-    this.setState({fb, insta, tumblr, github, linkedin, snapchat, twitter});
-  };
 
   render() {
     const url="https://saioduri.github.io/SocialConnect/index.html?" +
