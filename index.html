@@ -40,6 +40,8 @@
 
 <script>
 
+        // UTILITY FUNCTION
+        // Extract query parameters from the page's url
         // https://stackoverflow.com/questions/2090551/parse-query-string-in-javascript
         function getQueryVariable(variable) {
         var query = window.location.search.substring(1);
@@ -52,7 +54,28 @@
         }
         return undefined;
         }
-    
+
+        // PLATFORM DETECTION
+        // Change the redirection urls based on whether
+        // this is an iOS or other device
+        // 0 = Web
+        // 1 = iOS
+        // iOS Detection: https://stackoverflow.com/a/9039885
+        var isIOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+        var platform = (isIOS) ? 1 : 0
+
+        // DEFINE PLATFORM SPECIFIC URL PATTERNS
+        // This enables us to call iOS URL schemes
+        // and open directly in app
+        var URLS = {
+            Facebook: function(platform) {
+                switch(platform) {
+                    case 1: "fb://profile?id={user}"
+                    default: return "https://facebook.com/{user}"
+                } 
+            }
+        }
+
         var facebook = getQueryVariable("facebook");
         var instagram = getQueryVariable("instagram");
         var tumblr = getQueryVariable("tumblr");
@@ -64,7 +87,7 @@
     
         if (facebook != undefined) {
             var row = template.replace(/{network}/g, "Facebook")
-            row = row.replace(/{url}/g, "https://facebook.com/{user}");
+            row = row.replace(/{url}/g, URLS.Facebook(platform));
             row = row.replace(/{user}/g, facebook);
     
             document.getElementById("container").innerHTML += row;
