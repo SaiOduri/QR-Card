@@ -7,24 +7,49 @@ import globalStyles from "../styles/global";
 import QRCode from 'react-native-qrcode';
 
 export default class MenuScreen extends React.Component {
-    render() {
-        return (
-            <View style={styles.container}>
-            <Image style={localStyles.icon} source={require('../images/logoicon.png')}/>
-                <View style={styles.subContainer} >
-                    <View style={localStyles.qr}>
-                        <QRCode
-                            value={"http://facebook.github.io/react-native/"}
-                            size={200}
-                        />
-                    </View>
-                    <TouchableOpacity style={[globalStyles.button, styles.signInButton]} onPress={() => this.props.navigation.push('Accounts')}>
-                        <Text style={[styles.signInButtonText, globalStyles.buttonText]}>CONNECT ACCOUNTS</Text>
-                    </TouchableOpacity>
-                </View>
-            </View>
-        );
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      fb: "",
+      insta: "",
+      tumblr: "",
+      github: "",
+      linkedin: "",
+      snapchat: "",
+      twitter: "",
+    };
+  }
+
+  updateAccounts = (fb, insta, tumblr, github, linkedin, snapchat, twitter) => {
+    this.setState({fb, insta, tumblr, github, linkedin, snapchat, twitter});
+  };
+
+  render() {
+    const url="https://saioduri.github.io/SocialConnect/index.html?" +
+                ((this.state.fb != "") ? ("facebook=" + this.state.fb) : "") +
+                ((this.state.insta != "") ? ("&instagram=" + this.state.insta) : "") +
+                ((this.state.tumblr != "") ? ("&tumblr=" + this.state.tumblr) : "") +
+                ((this.state.github != "") ? ("&github=" + this.state.github) : "") +
+                ((this.state.linkedin != "") ? ("&linkedin=" + this.state.linkedin) : "") +
+                ((this.state.snapchat != "") ? ("&snapchat=" + this.state.snapchat) : "");
+    return (
+      <View style={styles.container}>
+        <Image style={localStyles.icon} source={require('../images/logoicon.png')}/>
+        <View style={styles.subContainer} >
+          <View style={localStyles.qr}>
+            <QRCode
+              value={url}
+              size={200}
+            />
+          </View>
+          <TouchableOpacity style={[globalStyles.button, styles.signInButton]} 
+            onPress={() => this.props.navigation.push('Accounts')}>
+              <Text style={[styles.signInButtonText, globalStyles.buttonText]}>CONNECT ACCOUNTS</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+    );
+  }
 }
 
 const localStyles = StyleSheet.create({
