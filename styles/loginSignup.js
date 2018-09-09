@@ -13,12 +13,6 @@ export default StyleSheet.create({
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-    }, facebookButton: {
-        backgroundColor: "#3B5998"
-    }, facebookButtonIcon: {
-        height: 30,
-        resizeMode: "contain",
-        marginRight: 10
     }, signInButton: {
         backgroundColor: "#F20951",
         justifyContent: "center"

@@ -9,9 +9,7 @@ export default class SplashScreen extends React.Component {
 
     render() {
         return (
-            <ImageBackground source={require('../images/logoblue.png')} style={styles.container}>
-                <Image style={localStyles.logo} source={require('../images/logowhite.png')}/>
-            </ImageBackground>
+            <Image style={localStyles.logo} source={require('../images/logowhite.png')}/>
         );
     }
 }

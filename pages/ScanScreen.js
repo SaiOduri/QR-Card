@@ -8,8 +8,8 @@ import {
   Linking,
 } from 'react-native';
 
-import { RNCamera } from 'react-native-camera';
-import QRCodeScanner from 'react-native-qrcode-scanner';
+// import { RNCamera } from 'react-native-camera';
+// import QRCodeScanner from 'react-native-qrcode-scanner';
 
 export default class ScanScreen extends Component {
   onSuccess(e) {
@@ -20,19 +20,23 @@ export default class ScanScreen extends Component {
 
   render() {
     return (
-      <QRCodeScanner
-        onRead={this.onSuccess.bind(this)}
-        topContent={
-          <Text style={styles.centerText}>
-            Go to <Text style={styles.textBold}>wikipedia.org/wiki/QR_code</Text> on your computer and scan the QR code.
-          </Text>
-        }
-        bottomContent={
-          <TouchableOpacity style={styles.buttonTouchable}>
-            <Text style={styles.buttonText}>OK. Got it!</Text>
-          </TouchableOpacity>
-        }
-      />
+
+        <View>
+            </View>
+
+    //   <QRCodeScanner
+    //     onRead={this.onSuccess.bind(this)}
+    //     topContent={
+    //       <Text style={styles.centerText}>
+    //         Go to <Text style={styles.textBold}>wikipedia.org/wiki/QR_code</Text> on your computer and scan the QR code.
+    //       </Text>
+    //     }
+    //     bottomContent={
+    //       <TouchableOpacity style={styles.buttonTouchable}>
+    //         <Text style={styles.buttonText}>OK. Got it!</Text>
+    //       </TouchableOpacity>
+    //     }
+    //   />
     );
   }
 }
