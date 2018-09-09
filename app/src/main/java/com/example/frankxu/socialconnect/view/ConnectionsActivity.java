@@ -19,14 +19,23 @@ public class ConnectionsActivity extends AppCompatActivity implements View.OnCli
 
         View snapchatBtn = findViewById(R.id.snapchat_btn);
         snapchatBtn.setOnClickListener(this);
+
+        View tumblrBtn = findViewById(R.id.tumblr_btn);
+        tumblrBtn.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
         switch(view.getId()) {
             case R.id.snapchat_btn:
-                DialogFragment dialogFragment = new SnapchatDialogFragment();
-                dialogFragment.show(getSupportFragmentManager(), "ayy");
+                DialogFragment snapDialog = new SnapchatDialogFragment();
+                snapDialog.show(getSupportFragmentManager(), "ayy");
+                break;
+
+            case R.id.tumblr_btn:
+                DialogFragment tumblrDialog = new TumblrDialogFragment();
+                tumblrDialog.show(getSupportFragmentManager(), "ayy2");
+                break;
         }
     }
 
