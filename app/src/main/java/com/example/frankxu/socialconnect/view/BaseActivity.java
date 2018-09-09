@@ -1,4 +1,4 @@
-package com.example.frankxu.socialconnect;
+package com.example.frankxu.socialconnect.view;
 
 import android.content.Context;
 import android.content.Intent;
@@ -7,6 +7,8 @@ import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+
+import com.example.frankxu.socialconnect.R;
 
 import java.util.Map;
 

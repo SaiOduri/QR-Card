@@ -1,4 +1,4 @@
-package com.example.frankxu.socialconnect;
+package com.example.frankxu.socialconnect.view;
 
 import android.content.Context;
 import android.content.SharedPreferences;

@@ -1,9 +1,11 @@
-package com.example.frankxu.socialconnect;
+package com.example.frankxu.socialconnect.view;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+
+import com.example.frankxu.socialconnect.R;
 
 /**
  * Created by frankxu on 2018-09-09.
