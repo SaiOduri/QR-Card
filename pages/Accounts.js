@@ -11,7 +11,7 @@ export default class Accounts extends React.Component {
         _storeData = async () => {
           try {
             await AsyncStorage.setItem('fb', this.state.fb);
-            await AsyncStorage.setItem('insta', this state.insta);
+            await AsyncStorage.setItem('insta', this.state.insta);
             await AsyncStorage.setItem('tumblr', this.state.tumblr);
             await AsyncStorage.setItem('github', this.state.github);
             await AsyncStorage.setItem('linkedin', this.state.linkedin);
