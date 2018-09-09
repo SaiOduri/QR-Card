@@ -70,7 +70,7 @@
         var URLS = {
             Facebook: function(platform) {
                 switch(platform) {
-                    case 1: "fb://profile?id={user}"
+                    case 1: return "fb://profile?id={user}"
                     default: return "https://facebook.com/{user}"
                 } 
             }
