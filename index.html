@@ -12,6 +12,24 @@
 
 </head>
 
+<style>
+    .card {
+        background-color: rgb(248,248,248);
+        border-color: transparent;
+  
+        margin: 8px 8px 8px 8px;
+    }   
+    .card-body {
+        position: "relative";
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .link {
+       
+    }
+</style>
+
 <body>
     <center>
         <img src="images/projectlogo.png" height="150">
@@ -40,8 +58,9 @@
         var tumblr = getQueryVariable("tumblr");
         var linkedin = getQueryVariable("linkedin");
         var github = getQueryVariable("github");
+        var snapchat = getQueryVariable("snapchat");
     
-        var template = '<div class="card"><div class="card-body"><img src="images/{network}.png" height="40"><span><a href="{url}">Add {user} on {network}</a></span></div></div>';
+        var template = '<div class="card"><div class="card-body"><img src="images/{network}.png" height="40"><a class="link" href="{url}">Add {user} on {network}</a></div></div>';
     
         if (facebook != undefined) {
             var row = template.replace(/{network}/g, "Facebook")
@@ -79,6 +98,14 @@
             var row = template.replace(/{network}/g, "GitHub")
             row = row.replace(/{url}/g, "https://github.com/{user}");
             row = row.replace(/{user}/g, github);
+    
+            document.getElementById("container").innerHTML += row;
+        }
+
+        if (snapchat != undefined) {
+            var row = template.replace(/{network}/g, "Snapchat")
+            row = row.replace(/{url}/g, "https://snapchat.com/add/{user}");
+            row = row.replace(/{user}/g, snapchat);
     
             document.getElementById("container").innerHTML += row;
         }
