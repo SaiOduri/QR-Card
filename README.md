@@ -5,6 +5,7 @@
 [ ] Dribble
 <hr>
 [x] Facebook Deep Linking iOS
-[ ] Instagram Deep Linking iOS
-[ ] Snapchat Deep Linking iOS
+[X] Instagram Deep Linking iOS
+[X] Snapchat Deep Linking iOS
+[ ] LinkedIn Deep Linking iOS
 [ ] Tumblr Deep Linking iOS
