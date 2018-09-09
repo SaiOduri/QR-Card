@@ -21,8 +21,6 @@ export default class MenuScreen extends React.Component {
                     <TouchableOpacity style={[globalStyles.button, styles.signInButton]} onPress={() => this.props.navigation.push('Accounts')}>
                         <Text style={[styles.signInButtonText, globalStyles.buttonText]}>CONNECT ACCOUNTS</Text>
                     </TouchableOpacity>
-
-
                 </View>
             </View>
         );
