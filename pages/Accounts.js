@@ -23,11 +23,18 @@ export default class Accounts extends React.Component {
     onSave = () => {
         _storeData = async () => {
           try {
-            await AsyncStorage.setItem('@MySuperStore:key', 'I like to save it.');
+            await AsyncStorage.setItem('fb', this.state.fb);
+            await AsyncStorage.setItem('insta', this.state.insta);
+            await AsyncStorage.setItem('tumblr', this.state.tumblr);
+            await AsyncStorage.setItem('github', this.state.github);
+            await AsyncStorage.setItem('linkedin', this.state.linkedin);
+            await AsyncStorage.setItem('snapchat', this.state.snapchat);
+            await AsyncStorage.setItem('twitter', this.state.twitter);
           } catch (error) {
-            // Error saving data
+            console.log("Couldn't update the internal storage");
           }
         }
+        this.props.navgiation.goBack();
     }
 
     render() {
