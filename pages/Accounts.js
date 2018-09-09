@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity, View, Image} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View, Image, TextInput, ScrollView} from 'react-native';
 
 import IconWithTitle from "../components/IconWithTitle";
 import styles from '../styles/loginSignup';
@@ -7,6 +7,19 @@ import globalStyles from "../styles/global";
 import QRCode from 'react-native-qrcode';
 
 export default class Accounts extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+          fb: "",
+          insta: "",
+          tumblr: "",
+          github: "",
+          linkedin: "",
+          snapchat: "",
+          twitter: "",
+        };
+      }
+
     onSave = () => {
         _storeData = async () => {
           try {
@@ -18,25 +31,48 @@ export default class Accounts extends React.Component {
     }
 
     render() {
-        return (
-            <View style={styles.container}>
-                <Image style={localStyles.icon} source={require('../images/logoicon.png')}/>
-                <View style={styles.subContainer} >
-                <TouchableOpacity style={[globalStyles.button, styles.signInButton, localStyles.signUpButton]}>
-                    <Text style={[styles.signInButtonText, globalStyles.buttonText, localStyles.signInText]}>Instagram</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={[globalStyles.button, styles.signInButton, localStyles.signUpButton]}>
-                    <Text style={[styles.signInButtonText, globalStyles.buttonText, localStyles.signInText]}>Facebook</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={[globalStyles.button, styles.signInButton, localStyles.signUpButton]}>
-                    <Text style={[styles.signInButtonText, globalStyles.buttonText, localStyles.signInText]}>SnapChat</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={[globalStyles.button, styles.signInButton, localStyles.signUpButton]}>
-                    <Text style={[styles.signInButtonText, globalStyles.buttonText, localStyles.signInText]}>Twitter</Text>
-                </TouchableOpacity>
 
+        return (
+            <ScrollView>
+                <View style={styles.container}>
+                    <Image style={localStyles.icon} source={require('../images/logoicon.png')}/>
+                    <View style={styles.subContainer} >
+                    <TouchableOpacity style={[globalStyles.button, styles.signInButton, localStyles.signUpButton]}>
+                        <Text style={[styles.signInButtonText, globalStyles.buttonText, localStyles.signInText]}>Facebook</Text>
+                        <TextInput placeholder="Enter your Facebook" onChangeText={(fb) => this.setState({fb})}/>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={[globalStyles.button, styles.signInButton, localStyles.signUpButton]}>
+                        <Text style={[styles.signInButtonText, globalStyles.buttonText, localStyles.signInText]}>Instagram</Text>
+                        <TextInput placeholder="Enter your Instagram" onChangeText={(insta) => this.setState({insta})}/>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={[globalStyles.button, styles.signInButton, localStyles.signUpButton]}>
+                        <Text style={[styles.signInButtonText, globalStyles.buttonText, localStyles.signInText]}>Tumblr</Text>
+                        <TextInput placeholder="Enter your Tumblr" onChangeText={(tumblr) => this.setState({tumblr})}/>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={[globalStyles.button, styles.signInButton, localStyles.signUpButton]}>
+                        <Text style={[styles.signInButtonText, globalStyles.buttonText, localStyles.signInText]}>Github</Text>
+                        <TextInput placeholder="Enter your Github" onChangeText={(github) => this.setState({github})}/>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={[globalStyles.button, styles.signInButton, localStyles.signUpButton]}>
+                        <Text style={[styles.signInButtonText, globalStyles.buttonText, localStyles.signInText]}>LinkedIn</Text>
+                        <TextInput placeholder="Enter your LinkedIn" onChangeText={(linkedin) => this.setState({linkedin})}/>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={[globalStyles.button, styles.signInButton, localStyles.signUpButton]}>
+                        <Text style={[styles.signInButtonText, globalStyles.buttonText, localStyles.signInText]}>Snapchat</Text>
+                        <TextInput placeholder="Enter your Snapchat" onChangeText={(snapchat) => this.setState({snapchat})}/>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={[globalStyles.button, styles.signInButton, localStyles.signUpButton]}>
+                        <Text style={[styles.signInButtonText, globalStyles.buttonText, localStyles.signInText]}>Twitter</Text>
+                        <TextInput placeholder="Enter your Twitter" onChangeText={(twitter) => this.setState({twitter})}/>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity onPress={() => this.onSave()} style={[globalStyles.button, styles.signInButton, localStyles.signUpButton]}>
+                        <Text style={[styles.signInButtonText, globalStyles.buttonText, localStyles.signInText]}>Save</Text>
+                    </TouchableOpacity>
+
+                    </View>
                 </View>
-            </View>
+            </ScrollView>
         );
     }
 }
