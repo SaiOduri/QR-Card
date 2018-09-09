@@ -7,21 +7,31 @@ import globalStyles from "../styles/global";
 import QRCode from 'react-native-qrcode';
 
 export default class Accounts extends React.Component {
+    onSave = () => {
+        _storeData = async () => {
+          try {
+            await AsyncStorage.setItem('@MySuperStore:key', 'I like to save it.');
+          } catch (error) {
+            // Error saving data
+          }
+        }
+    }
+
     render() {
         return (
             <View style={styles.container}>
-            <Image style={localStyles.icon} source={require('../images/logoicon.png')}/>
+                <Image style={localStyles.icon} source={require('../images/logoicon.png')}/>
                 <View style={styles.subContainer} >
-                <TouchableOpacity style={[globalStyles.button, styles.signInButton, localStyles.signUpButton]} onPress={() => this.props.navigation.push('LoginDashboard')}>
+                <TouchableOpacity style={[globalStyles.button, styles.signInButton, localStyles.signUpButton]}>
                     <Text style={[styles.signInButtonText, globalStyles.buttonText, localStyles.signInText]}>Instagram</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={[globalStyles.button, styles.signInButton, localStyles.signUpButton]} onPress={() => this.props.navigation.push('LoginDashboard')}>
+                <TouchableOpacity style={[globalStyles.button, styles.signInButton, localStyles.signUpButton]}>
                     <Text style={[styles.signInButtonText, globalStyles.buttonText, localStyles.signInText]}>Facebook</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={[globalStyles.button, styles.signInButton, localStyles.signUpButton]} onPress={() => this.props.navigation.push('LoginDashboard')}>
+                <TouchableOpacity style={[globalStyles.button, styles.signInButton, localStyles.signUpButton]}>
                     <Text style={[styles.signInButtonText, globalStyles.buttonText, localStyles.signInText]}>SnapChat</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={[globalStyles.button, styles.signInButton, localStyles.signUpButton]} onPress={() => this.props.navigation.push('LoginDashboard')}>
+                <TouchableOpacity style={[globalStyles.button, styles.signInButton, localStyles.signUpButton]}>
                     <Text style={[styles.signInButtonText, globalStyles.buttonText, localStyles.signInText]}>Twitter</Text>
                 </TouchableOpacity>
 
