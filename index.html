@@ -10,48 +10,74 @@
 
 </head>
 
-<script>
-
-    // https://stackoverflow.com/questions/2090551/parse-query-string-in-javascript
-    function getQueryVariable(variable) {
-    var query = window.location.search.substring(1);
-    var vars = query.split('&');
-    for (var i = 0; i < vars.length; i++) {
-        var pair = vars[i].split('=');
-        if (decodeURIComponent(pair[0]) == variable) {
-            return decodeURIComponent(pair[1]);
-        }
-    }
-    return undefined;
-    }
-
-    var facebook = getQueryVariable("facebook");
-    var instagram = getQueryVariable("instagram");
-    var tumblr = getQueryVariable("instagram");
-    var linkedin = getQueryVariable("linkedin");
-    var github = getQueryVariable("github");
-
-
-    var images = {
-        facebook: "",
-        instagram: "",
-        tumblr: "",
-        linkedin: "",
-        github: ""
-    }
-
-    var template = "<tr><img src={logo} "
-
-</script>
-
-
 <body>
-    <div id="id" class="container">
-        <div class="card">
-            <div class="card-body">
-                This is some text within a card body.
-            </div>
-        </div>
+    <div id="container" class="container">
     </div>
 </body>
+
+<script>
+
+        // https://stackoverflow.com/questions/2090551/parse-query-string-in-javascript
+        function getQueryVariable(variable) {
+        var query = window.location.search.substring(1);
+        var vars = query.split('&');
+        for (var i = 0; i < vars.length; i++) {
+            var pair = vars[i].split('=');
+            if (decodeURIComponent(pair[0]) == variable) {
+                return decodeURIComponent(pair[1]);
+            }
+        }
+        return undefined;
+        }
+    
+        var facebook = getQueryVariable("facebook");
+        var instagram = getQueryVariable("instagram");
+        var tumblr = getQueryVariable("tumblr");
+        var linkedin = getQueryVariable("linkedin");
+        var github = getQueryVariable("github");
+    
+        var template = '<div class="card"><div class="card-body"><img src="images/{network}.png" height="40"><span><a href="{url}">Add {user} on {network}</a></span></div></div>';
+    
+        if (facebook != undefined) {
+            var row = template.replace(/{network}/g, "Facebook")
+            row = row.replace(/{url}/g, "https://facebook.com/{user}");
+            row = row.replace(/{user}/g, facebook);
+    
+            document.getElementById("container").innerHTML += row;
+        }
+
+        if (instagram != undefined) {
+            var row = template.replace(/{network}/g, "Instagram")
+            row = row.replace(/{url}/g, "https://instagram.com/{user}");
+            row = row.replace(/{user}/g, instagram);
+    
+            document.getElementById("container").innerHTML += row;
+        }
+
+        if (tumblr != undefined) {
+            var row = template.replace(/{network}/g, "Tumblr")
+            row = row.replace(/{url}/g, "https://tumblr.com/blog/{user}");
+            row = row.replace(/{user}/g, tumblr);
+    
+            document.getElementById("container").innerHTML += row;
+        }
+
+        if (linkedin != undefined) {
+            var row = template.replace(/{network}/g, "LinkedIn")
+            row = row.replace(/{url}/g, "https://linkedin.com/in/{user}");
+            row = row.replace(/{user}/g, linkedin);
+    
+            document.getElementById("container").innerHTML += row;
+        }
+
+        if (github != undefined) {
+            var row = template.replace(/{network}/g, "GitHub")
+            row = row.replace(/{url}/g, "https://github.com/{user}");
+            row = row.replace(/{user}/g, github);
+    
+            document.getElementById("container").innerHTML += row;
+        }
+    
+    </script>
+    
 </html>
