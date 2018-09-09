@@ -99,7 +99,7 @@
         var github = getQueryVariable("github");
         var snapchat = getQueryVariable("snapchat");
     
-        var template = '<div class="card"><div class="card-body"><img src="images/{network}.png" height="40"><a class="link" href="{url}">Add {user} on {network}</a></div></div>';
+        var template = '<div class="card"><div class="card-body"><img src="images/{network}.png" height="40"><a class="link" href="{url}">Add {user}</a></div></div>';
     
         if (facebook != undefined) {
             var row = template.replace(/{network}/g, "Facebook")
