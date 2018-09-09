@@ -27,19 +27,21 @@
         android:clickable="true"
         android:padding="12dp"/>
 
-    <TextView
+    <ImageView
+        android:src="@drawable/tumblr_logo_white"
         android:id="@+id/tumblr_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="108dp"
+        android:layout_height="48dp"
         android:text="Tumblr"
         android:focusable="true"
         android:clickable="true"
-        android:padding="12dp"/>
+        />
 
-    <TextView
+    <ImageView
+        android:src="@drawable/snapchat_logo_text"
         android:id="@+id/snapchat_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="108dp"
+        android:layout_height="48dp"
         android:text="Snapchat"
         android:focusable="true"
         android:clickable="true"
