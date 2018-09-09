@@ -1,7 +1,9 @@
 import React from 'react';
-import {Image, Text, View} from "react-native";
+import {Image, Text, View, Dimensions} from "react-native";
 
 import globalStyles from '../styles/global';
+
+const {height, width} = Dimensions.get('window');
 
 export default ({subHeading, containerStyles}) =>
             <View style={containerStyles}>
@@ -11,7 +13,8 @@ export default ({subHeading, containerStyles}) =>
 
 const styles = {
     logo: {
-        height: 200,
+        width: width,
+        height: 400,
         resizeMode: 'contain'
     },
     subHeading: {
