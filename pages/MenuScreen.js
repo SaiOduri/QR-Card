@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity, View, Image, Link} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View, Image, AsyncStorage} from 'react-native';
 
 import IconWithTitle from "../components/IconWithTitle";
 import styles from '../styles/loginSignup';
@@ -12,9 +12,6 @@ export default class MenuScreen extends React.Component {
             <View style={styles.container}>
             <Image style={localStyles.icon} source={require('../images/logoicon.png')}/>
                 <View style={styles.subContainer} >
-                    <TouchableOpacity style={[globalStyles.button, styles.signInButton]} onPress={() => this.props.navigation.push('ScanScreen')}>
-                        <Text style={[styles.signInButtonText, globalStyles.buttonText]}>SCAN</Text>
-                    </TouchableOpacity>
                     <View style={localStyles.qr}>
                         <QRCode
                             value={"http://facebook.github.io/react-native/"}

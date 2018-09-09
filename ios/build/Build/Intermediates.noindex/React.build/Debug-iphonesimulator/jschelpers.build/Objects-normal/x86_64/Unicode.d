@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/sai/Desktop/School/SocialConnect/node_modules/react-native/ReactCommon/jschelpers/Unicode.cpp \
-  /Users/sai/Desktop/School/SocialConnect/node_modules/react-native/ReactCommon/jschelpers/Unicode.h
+  /Users/stephenluc/Documents/SocialConnect/node_modules/react-native/ReactCommon/jschelpers/Unicode.cpp \
+  /Users/stephenluc/Documents/SocialConnect/node_modules/react-native/ReactCommon/jschelpers/Unicode.h
