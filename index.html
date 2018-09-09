@@ -85,6 +85,10 @@
             Facebook: {
                 native: "fb://profile?id={user}" ,
                 web: "https://facebook.com/{user}"
+            },
+            Instagram: {
+                native: "instagram://user?username={user}",
+                web: "https://facebook.com/{user}"
             }
         }
 
@@ -108,7 +112,7 @@
 
         if (instagram != undefined) {
             var row = template.replace(/{network}/g, "Instagram")
-            row = row.replace(/{url}/g, "https://instagram.com/{user}");
+            row = row.replace(/{url}/g, (os() == "iOS") ? URLS.Instagram.native : URLS.Instagram.web);
             row = row.replace(/{user}/g, instagram);
     
             document.getElementById("container").innerHTML += row;
