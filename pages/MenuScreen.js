@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity, View, Image} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View, Image, Link} from 'react-native';
 
 import IconWithTitle from "../components/IconWithTitle";
 import styles from '../styles/loginSignup';

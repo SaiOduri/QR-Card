@@ -1,3 +1,5 @@
+'use strict';
+
 import React, { Component } from 'react';
 
 import {
@@ -8,35 +10,32 @@ import {
   Linking,
 } from 'react-native';
 
-// import { RNCamera } from 'react-native-camera';
-// import QRCodeScanner from 'react-native-qrcode-scanner';
+
+import {QRCodeScanner} from 'react-native-qrcode-scanner';
 
 export default class ScanScreen extends Component {
   onSuccess(e) {
-    Linking
+    /*Linking
       .openURL(e.data)
-      .catch(err => console.error('An error occured', err));
+      .catch(err => console.error('An error occured', err));*/
   }
 
   render() {
     return (
 
-        <View>
-            </View>
-
-    //   <QRCodeScanner
-    //     onRead={this.onSuccess.bind(this)}
-    //     topContent={
-    //       <Text style={styles.centerText}>
-    //         Go to <Text style={styles.textBold}>wikipedia.org/wiki/QR_code</Text> on your computer and scan the QR code.
-    //       </Text>
-    //     }
-    //     bottomContent={
-    //       <TouchableOpacity style={styles.buttonTouchable}>
-    //         <Text style={styles.buttonText}>OK. Got it!</Text>
-    //       </TouchableOpacity>
-    //     }
-    //   />
+      <QRCodeScanner
+        onRead={this.onSuccess.bind(this)}
+        topContent={
+          <Text style={styles.centerText}>
+            Go to <Text style={styles.textBold}>wikipedia.org/wiki/QR_code</Text> on your computer and scan the QR code.
+          </Text>
+        }
+        bottomContent={
+          <TouchableOpacity style={styles.buttonTouchable}>
+            <Text style={styles.buttonText}>OK. Got it!</Text>
+          </TouchableOpacity>
+        }
+      />
     );
   }
 }
@@ -61,4 +60,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('default', () => ScanScreen);
+// AppRegistry.registerComponent('default', () => ScanScreen);
