@@ -58,11 +58,25 @@
         // PLATFORM DETECTION
         // Change the redirection urls based on whether
         // this is an iOS or other device
-        // 0 = Web
-        // 1 = iOS
-        // iOS Detection: https://stackoverflow.com/a/9039885
-        var isIOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
-        var platform = (isIOS) ? 1 : 0
+        function os() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            // Windows Phone must come first because its UA also contains "Android"
+            if (/windows phone/i.test(userAgent)) {
+                return "Windows Phone";
+            }
+
+            if (/android/i.test(userAgent)) {
+                return "Android";
+            }
+
+            // iOS detection from: http://stackoverflow.com/a/9039885/177710
+            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                return "iOS";
+            }
+
+        return "unknown";
+    }
 
         // DEFINE PLATFORM SPECIFIC URL PATTERNS
         // This enables us to call iOS URL schemes
@@ -85,7 +99,7 @@
     
         if (facebook != undefined) {
             var row = template.replace(/{network}/g, "Facebook")
-            row = row.replace(/{url}/g, "fb://profile?id={user}");
+            row = row.replace(/{url}/g, (os() == "iOS") ? URLS.Facebook.native : URLS.Facebook.web);
             row = row.replace(/{user}/g, facebook);
     
             document.getElementById("container").innerHTML += row;
