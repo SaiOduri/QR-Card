@@ -1,7 +1,9 @@
 package com.example.frankxu.socialconnect.view;
 
+
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
@@ -14,18 +16,17 @@ public class ConnectionsActivity extends AppCompatActivity implements View.OnCli
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_connections);
+
+        View snapchatBtn = findViewById(R.id.snapchat_btn);
+        snapchatBtn.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
         switch(view.getId()) {
-            case R.id.facebook_btn:
-                Context context = getApplicationContext();
-                CharSequence text = "Hello toast!";
-                int duration = Toast.LENGTH_SHORT;
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
-                break;
+            case R.id.snapchat_btn:
+                DialogFragment dialogFragment = new SnapchatDialogFragment();
+                dialogFragment.show(getSupportFragmentManager(), "ayy");
         }
     }
 
