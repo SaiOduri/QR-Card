@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.frankxu.socialconnect.view.ConnectionsActivity"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/facebook_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Facebook"
+        android:focusable="true"
+        android:clickable="true"
+        android:padding="12dp"/>
+
+    <TextView
+        android:id="@+id/instagram_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Instagram"
+        android:focusable="true"
+        android:clickable="true"
+        android:padding="12dp"/>
+
+    <TextView
+        android:id="@+id/tumblr_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tumblr"
+        android:focusable="true"
+        android:clickable="true"
+        android:padding="12dp"/>
+
+    <TextView
+        android:id="@+id/snapchat_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Snapchat"
+        android:focusable="true"
+        android:clickable="true"
+        android:padding="12dp"/>
+
+    <TextView
+        android:id="@+id/myspace_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MySpace"
+        android:focusable="true"
+        android:clickable="true"
+        android:padding="12dp"/>
+
+</LinearLayout>

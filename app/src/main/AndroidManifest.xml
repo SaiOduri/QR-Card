@@ -21,6 +21,7 @@
         <activity android:name=".view.MainActivity"/>
         <activity android:name=".view.CameraActivity"/>
         <activity android:name=".view.FirstActivity"/>
+        <activity android:name=".view.ConnectionsActivity"/>
     </application>
 
 </manifest>
