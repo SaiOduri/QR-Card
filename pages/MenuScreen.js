@@ -17,25 +17,47 @@ export default class MenuScreen extends React.Component {
       linkedin: "",
       snapchat: "",
       twitter: "",
+      loading: false,
     };
   }
-  componentDidMount() {
-    _retrieveData = async () => {
-      try {
-        const fb = await AsyncStorage.getItem('fb');
-        const insta = await AsyncStorage.getItem('insta');
-        const tumblr = await AsyncStorage.getItem('tumblr');
-        const github = await AsyncStorage.getItem('github');
-        const linkedin = await AsyncStorage.getItem('linkedin');
-        const snapchat = await AsyncStorage.getItem('snapchat');
-        const twitter = await AsyncStorage.getItem('twitter');
 
-        this.setState({fb, insta, tumblr, github, linkedin, snapchat, twitter});
-       } catch (error) {
-         console.log("didn't upload properly: " + error);
-       }
-    }
+  componentDidMount() {
+    this.setState({loading: true});
+    this.fetchAccounts();
+    console.log(this.props.navigation);
   }
+
+  fetchAccounts = () => {
+    return new Promise((resolve, reject) => {
+      this._retrieveData()
+        .then((accounts) => {
+          this.setState(accounts, resolve);
+        })
+        .catch(e => {
+          reject(e);
+        })
+        .finally(() => {
+          this.setState({loading: false});
+        });
+    });
+  };
+
+  _retrieveData = async () => {
+    try {
+      const fb = (await AsyncStorage.getItem("fb")) || "";
+      const insta = (await AsyncStorage.getItem("insta")) || "";
+      const tumblr = (await AsyncStorage.getItem("tumblr")) || "";
+      const github = (await AsyncStorage.getItem("github")) || "";
+      const linkedin = (await AsyncStorage.getItem("linkedin")) || "";
+      const snapchat = (await AsyncStorage.getItem("snapchat")) || "";
+      const twitter = (await AsyncStorage.getItem("twitter")) || "";
+      console.log(insta);
+
+      return { fb, insta, tumblr, github, linkedin, snapchat, twitter };
+    } catch (error) {
+      console.log("didn't upload properly: " + error);
+    }
+  };
 
   render() {
     const url="https://saioduri.github.io/SocialConnect/index.html?" +
@@ -50,10 +72,17 @@ export default class MenuScreen extends React.Component {
         <Image style={localStyles.icon} source={require('../images/logoicon.png')}/>
         <View style={styles.subContainer} >
           <View style={localStyles.qr}>
-            <QRCode
-              value={url}
-              size={200}
-            />
+            {!this.state.loading ? 
+              <QRCode
+                value={url}
+                size={200}
+              /> :
+              <QRCode
+                value={url}
+                size={200}
+                bgColor='purple'
+              /> 
+          }
           </View>
           <TouchableOpacity style={[globalStyles.button, styles.signInButton]} 
             onPress={() => this.props.navigation.push('Accounts')}>
