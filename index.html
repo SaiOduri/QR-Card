@@ -1,9 +1,155 @@
 <!DOCTYPE html>
 <html>
+
+<head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<style>
+    .card {
+        background-color: rgb(248,248,248);
+        border-color: transparent;
+  
+        margin: 8px 8px 8px 8px;
+    }   
+    .card-body {
+        position: "relative";
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .link {
+       
+    }
+</style>
+
 <body>
-
-<h1>My First Heading</h1>
-<p>My first paragraph.</p>
-
+    <center>
+        <img src="images/projectlogo.png" height="150">
+    </center>
+    <div id="container" class="container">
+    </div>
 </body>
+
+<script>
+
+        // UTILITY FUNCTION
+        // Extract query parameters from the page's url
+        // https://stackoverflow.com/questions/2090551/parse-query-string-in-javascript
+        function getQueryVariable(variable) {
+        var query = window.location.search.substring(1);
+        var vars = query.split('&');
+        for (var i = 0; i < vars.length; i++) {
+            var pair = vars[i].split('=');
+            if (decodeURIComponent(pair[0]) == variable) {
+                return decodeURIComponent(pair[1]);
+            }
+        }
+        return undefined;
+        }
+
+        // PLATFORM DETECTION
+        // Change the redirection urls based on whether
+        // this is an iOS or other device
+        function os() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            // Windows Phone must come first because its UA also contains "Android"
+            if (/windows phone/i.test(userAgent)) {
+                return "Windows Phone";
+            }
+
+            if (/android/i.test(userAgent)) {
+                return "Android";
+            }
+
+            // iOS detection from: http://stackoverflow.com/a/9039885/177710
+            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                return "iOS";
+            }
+
+        return "unknown";
+    }
+
+        // DEFINE PLATFORM SPECIFIC URL PATTERNS
+        // This enables us to call iOS URL schemes
+        // and open directly in app
+        var URLS = {
+            Facebook: {
+                native: "fb://profile?id={user}" ,
+                web: "https://facebook.com/{user}"
+            },
+            Instagram: {
+                native: "instagram://user?username={user}",
+                web: "https://www.instagram.com/{user}"
+            }
+        }
+
+        var facebook = getQueryVariable("facebook");
+        var instagram = getQueryVariable("instagram");
+        var tumblr = getQueryVariable("tumblr");
+        var linkedin = getQueryVariable("linkedin");
+        var github = getQueryVariable("github");
+        var snapchat = getQueryVariable("snapchat");
+    
+        var template = '<div class="card"><div class="card-body"><img src="images/{network}.png" height="40"><a class="link" href="{url}">Add {user}</a></div></div>';
+    
+        if (facebook != undefined) {
+            var row = template.replace(/{network}/g, "Facebook")
+            row = row.replace(/{url}/g, (os() == "iOS") ? URLS.Facebook.native : URLS.Facebook.web);
+            row = row.replace(/{user}/g, facebook);
+    
+            document.getElementById("container").innerHTML += row;
+
+        }
+
+        if (instagram != undefined) {
+            var row = template.replace(/{network}/g, "Instagram")
+            row = row.replace(/{url}/g, (os() == "iOS") ? URLS.Instagram.native : URLS.Instagram.web);
+            row = row.replace(/{user}/g, instagram);
+    
+            document.getElementById("container").innerHTML += row;
+        }
+
+        if (tumblr != undefined) {
+            var row = template.replace(/{network}/g, "Tumblr")
+            row = row.replace(/{url}/g, "https://tumblr.com/blog/{user}");
+            row = row.replace(/{user}/g, tumblr);
+    
+            document.getElementById("container").innerHTML += row;
+        }
+
+        if (linkedin != undefined) {
+            var row = template.replace(/{network}/g, "LinkedIn")
+            row = row.replace(/{url}/g, "https://linkedin.com/in/{user}");
+            row = row.replace(/{user}/g, linkedin);
+    
+            document.getElementById("container").innerHTML += row;
+        }
+
+        if (github != undefined) {
+            var row = template.replace(/{network}/g, "GitHub")
+            row = row.replace(/{url}/g, "https://github.com/{user}");
+            row = row.replace(/{user}/g, github);
+    
+            document.getElementById("container").innerHTML += row;
+        }
+
+        if (snapchat != undefined) {
+            var row = template.replace(/{network}/g, "Snapchat")
+            row = row.replace(/{url}/g, "https://snapchat.com/add/{user}");
+            row = row.replace(/{user}/g, snapchat);
+    
+            document.getElementById("container").innerHTML += row;
+        }
+
+    </script>
+    
 </html>
