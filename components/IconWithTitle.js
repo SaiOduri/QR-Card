@@ -14,7 +14,7 @@ export default ({subHeading, containerStyles}) =>
 const styles = {
     logo: {
         width: width,
-        height: 400,
+        height: height/4,
         resizeMode: 'contain'
     },
     subHeading: {
