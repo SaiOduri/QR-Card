@@ -27,16 +27,13 @@ export default class Accounts extends React.Component {
       snapchat: "",
       twitter: ""
     };
-  }
-
-  componentDidMount() {
     this.fetchAccounts();
   }
 
   fetchAccounts = () => {
     return new Promise((resolve, reject) => {
       this._retrieveData()
-        .then((accounts) => {
+        .then(accounts => {
           this.setState(accounts, resolve);
         })
         .catch(e => {

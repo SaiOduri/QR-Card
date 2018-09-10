@@ -1,10 +1,9 @@
 import React from 'react';
 import {Image, ImageBackground, StyleSheet} from 'react-native';
-import LoginSignUpPicker from "./SignInSignUpScreen";
 
 export default class SplashScreen extends React.Component {
     componentWillMount() {
-        setTimeout(() => this.props.navigation.replace('SignInSignUpScreen'), 0)
+        setTimeout(() => this.props.navigation.replace('LandingScreen'), 0)
     }
 
     render() {
