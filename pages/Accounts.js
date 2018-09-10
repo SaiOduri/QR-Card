@@ -34,7 +34,7 @@ export default class Accounts extends React.Component {
             console.log("Couldn't update the internal storage");
           }
         }
-        this.props.navgiation.goBack();
+        this.props.navigation.goBack();
     }
 
     render() {
