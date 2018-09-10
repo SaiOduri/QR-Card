@@ -17,14 +17,12 @@ export default class MenuScreen extends React.Component {
       linkedin: "",
       snapchat: "",
       twitter: "",
-      loading: false,
     };
+    this.refresh();
   }
 
-  componentDidMount() {
-    this.setState({loading: true});
+  refresh = () => {
     this.fetchAccounts();
-    console.log(this.props.navigation);
   }
 
   fetchAccounts = () => {
@@ -37,6 +35,7 @@ export default class MenuScreen extends React.Component {
           reject(e);
         })
         .finally(() => {
+          console.log(this.state.tumblr);
           this.setState({loading: false});
         });
     });
@@ -51,7 +50,6 @@ export default class MenuScreen extends React.Component {
       const linkedin = (await AsyncStorage.getItem("linkedin")) || "";
       const snapchat = (await AsyncStorage.getItem("snapchat")) || "";
       const twitter = (await AsyncStorage.getItem("twitter")) || "";
-      console.log(insta);
 
       return { fb, insta, tumblr, github, linkedin, snapchat, twitter };
     } catch (error) {
@@ -72,20 +70,13 @@ export default class MenuScreen extends React.Component {
         <Image style={localStyles.icon} source={require('../images/logoicon.png')}/>
         <View style={styles.subContainer} >
           <View style={localStyles.qr}>
-            {!this.state.loading ? 
-              <QRCode
-                value={url}
-                size={200}
-              /> :
-              <QRCode
-                value={url}
-                size={200}
-                bgColor='purple'
-              /> 
-          }
+            <QRCode
+              value={url}
+              size={200}
+            />
           </View>
           <TouchableOpacity style={[globalStyles.button, styles.signInButton]} 
-            onPress={() => this.props.navigation.push('Accounts')}>
+            onPress={() => this.props.navigation.push('Accounts', {onGoBack: () => this.refresh()})}>
               <Text style={[styles.signInButtonText, globalStyles.buttonText]}>CONNECT ACCOUNTS</Text>
           </TouchableOpacity>
         </View>

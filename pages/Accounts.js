@@ -54,7 +54,6 @@ export default class Accounts extends React.Component {
       const linkedin = (await AsyncStorage.getItem("linkedin")) || "";
       const snapchat = (await AsyncStorage.getItem("snapchat")) || "";
       const twitter = (await AsyncStorage.getItem("twitter")) || "";
-      console.log(insta);
 
       return { fb, insta, tumblr, github, linkedin, snapchat, twitter };
     } catch (error) {
@@ -64,6 +63,7 @@ export default class Accounts extends React.Component {
 
   onSave = () => {
     this._storeData();
+    this.props.navigation.state.params.onGoBack();
     this.props.navigation.goBack();
   };
 
@@ -250,7 +250,8 @@ export default class Accounts extends React.Component {
               style={[
                 globalStyles.button,
                 styles.signInButton,
-                localStyles.signUpButton
+                localStyles.signUpButton,
+                { marginBottom: 20 }
               ]}
             >
               <Text
