@@ -6,7 +6,7 @@
 	<dict>
 		<key>Base.lproj/LaunchScreen.nib</key>
 		<data>
-		tHxYtNayzwDcLiDPP4Qqx+i8YnM=
+		ti79HenoLURrtS5blpaxqUfccQ0=
 		</data>
 		<key>Frameworks/IDEBundleInjection.framework/IDEBundleInjection</key>
 		<data>
@@ -51,7 +51,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		PDJDGzE6DvHpa7gIR2vhKXG+RNw=
+		krBkm1zfsCUcnkkkrVDHFoQh+4o=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -71,7 +71,7 @@
 		</data>
 		<key>PlugIns/SocialConnectTests.xctest/SocialConnectTests</key>
 		<data>
-		tC7eldcwY6UYong6aX1P1JZqPkw=
+		J0hnOvHDBD4bwpkgzkKchk6ucC0=
 		</data>
 		<key>PlugIns/SocialConnectTests.xctest/_CodeSignature/CodeResources</key>
 		<data>
@@ -84,11 +84,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			tHxYtNayzwDcLiDPP4Qqx+i8YnM=
+			ti79HenoLURrtS5blpaxqUfccQ0=
 			</data>
 			<key>hash2</key>
 			<data>
-			qtAjc8q8E06m/ICCNYeRacqJLpewJGOdzPEt3Z8o4Zo=
+			JPfhGwG8WrwIVDr7+Isfw/KPQFwMsHqmAluQhGG2+Y8=
 			</data>
 		</dict>
 		<key>Frameworks/IDEBundleInjection.framework/IDEBundleInjection</key>
@@ -229,11 +229,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			tC7eldcwY6UYong6aX1P1JZqPkw=
+			J0hnOvHDBD4bwpkgzkKchk6ucC0=
 			</data>
 			<key>hash2</key>
 			<data>
-			G3HFN8IKBNGetnPS0xgZoSl48fRr7Omlr+rYugdaQJg=
+			T2NGyZgPOumU5crgeHCPFn0bRusYU6NDf5S7p72Vb+U=
 			</data>
 		</dict>
 		<key>PlugIns/SocialConnectTests.xctest/_CodeSignature/CodeResources</key>
