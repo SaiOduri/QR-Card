@@ -10,7 +10,7 @@ One App that allows you to connect multiple social media accounts
 
 ### WHAT IS SOCIALCONNECT?
 
-Social Connect is a platform where users can connect multiple social medias easily and efficently. We provide a service that essentially saves people a lot of time and allows you to have all your social medias in one link!
+Social Connect is a platform where users can connect multiple social medias easily and efficiently. We provide a service that essentially saves people a lot of time and allows you to have all your social medias in one link!
 
 ### HOW DO YOU USE SOCIALCONNECT?
 
