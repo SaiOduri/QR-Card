@@ -2,45 +2,49 @@
 <html>
 
 <head>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-        <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
-        <script>
-          var config = {
+    <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
+    <script>
+        var config = {
             apiKey: "AIzaSyAycwLdjxQUjFEUezhzVkbnI-0DsrLMa0w",
             authDomain: "socialconnectapp123.firebaseapp.com",
             databaseURL: "https://socialconnectapp123.firebaseio.com",
             projectId: "socialconnectapp123",
             storageBucket: "socialconnectapp123.appspot.com",
             messagingSenderId: "124664150959"
-          };
-          firebase.initializeApp(config);
-        </script>
+        };
+        firebase.initializeApp(config);
+    </script>
 
 </head>
 
 
 <style>
     .card {
-        background-color: rgb(248,248,248);
+        background-color: rgb(248, 248, 248);
         border-color: transparent;
-  
+
         margin: 8px 8px 8px 8px;
-    }   
+    }
+
     .card-body {
         position: "relative";
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
-    .link {
-       
+
+    .input-group {
+        align-self: flex-end;
+        max-width: 300px;
+    }
+
+    .form-control {
+        max-width: 200px;
     }
 </style>
 
@@ -49,16 +53,69 @@
         <img src="images/projectlogo.png" height="150">
     </center>
     <div id="container" class="container">
-        <h1>Signup for SocialConnect</h1>
+        <div class="card">
+            <div class="card-body">
+                <img src="images/Facebook.png" height="40">
+                <div class="input-group" style="max-width: 300px;">
+                    <span class="input-group-addon" id="facebook-addon">facebook.com/</span>
+                    <input id="facebook" type="text" class="form-control" placeholder="ringostarr" aria-label="Username" aria-describedby="basic-addon1">
+               </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <img src="images/Instagram.png" height="40">
+                <div class="input-group" style="max-width: 300px;">
+                    <span class="input-group-addon" id="instagram-addon">instagram.com/</span>
+                    <input id="instagram" type="text" class="form-control" placeholder="johnlennon" aria-label="Username" aria-describedby="basic-addon1">
+               </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <img src="images/Tumblr.png" height="40">
+                <div class="input-group" style="max-width: 300px;">
+                        <input id="tumblr" type="text" class="form-control" placeholder="designclever" aria-label="Username" aria-describedby="basic-addon1">
+                        <span class="input-group-addon" id="tumblr-addon">.tumblr.com</span>
+                   </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <img src="images/LinkedIn.png" height="40">
+                <div class="input-group" style="max-width: 300px;">
+                    <span class="input-group-addon" id="linkedin-addon">linkedin.com/in/</span>
+                    <input id="linkedin" type="text" class="form-control" placeholder="craigjapp" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <img src="images/GitHub.png" height="40">
+                <div class="input-group" style="max-width: 300px;">
+                    <span class="input-group-addon" id="github-addon">github.com/</span>
+                    <input id="github" type="text" class="form-control" placeholder="brendanmanning" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <img src="images/Snapchat.png" height="40">
+                <div class="input-group" style="max-width: 300px;">
+                    <span class="input-group-addon" id="snapchat-addon">snapchat.com/add/</span>
+                    <input id="snapchat" type="text" class="form-control" placeholder="KanyeWest" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 
 <script>
 
-        // UTILITY FUNCTION
-        // Extract query parameters from the page's url
-        // https://stackoverflow.com/questions/2090551/parse-query-string-in-javascript
-        function getQueryVariable(variable) {
+    // UTILITY FUNCTION
+    // Extract query parameters from the page's url
+    // https://stackoverflow.com/questions/2090551/parse-query-string-in-javascript
+    function getQueryVariable(variable) {
         var query = window.location.search.substring(1);
         var vars = query.split('&');
         for (var i = 0; i < vars.length; i++) {
@@ -68,31 +125,31 @@
             }
         }
         return undefined;
+    }
+
+    // PLATFORM DETECTION
+    // Change the redirection urls based on whether
+    // this is an iOS or other device
+    function os() {
+        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+        // Windows Phone must come first because its UA also contains "Android"
+        if (/windows phone/i.test(userAgent)) {
+            return "Windows Phone";
         }
 
-        // PLATFORM DETECTION
-        // Change the redirection urls based on whether
-        // this is an iOS or other device
-        function os() {
-            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        if (/android/i.test(userAgent)) {
+            return "Android";
+        }
 
-            // Windows Phone must come first because its UA also contains "Android"
-            if (/windows phone/i.test(userAgent)) {
-                return "Windows Phone";
-            }
-
-            if (/android/i.test(userAgent)) {
-                return "Android";
-            }
-
-            // iOS detection from: http://stackoverflow.com/a/9039885/177710
-            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-                return "iOS";
-            }
+        // iOS detection from: http://stackoverflow.com/a/9039885/177710
+        if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+            return "iOS";
+        }
 
         return "unknown";
     }
 
-    </script>
-    
+</script>
+
 </html>
