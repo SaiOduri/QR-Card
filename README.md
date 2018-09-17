@@ -7,6 +7,7 @@ One App that allows you to connect multiple social media accounts
   - Stephen Luc
   - Frank Xu
   - Brendan Manning
+  - Rahmatullah Nekyar
 
 ### WHAT IS SOCIALCONNECT?
 
