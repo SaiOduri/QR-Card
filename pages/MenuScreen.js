@@ -110,6 +110,18 @@ export default class MenuScreen extends React.Component {
               CONNECT ACCOUNTS
             </Text>
           </TouchableOpacity>
+          <TouchableOpacity
+            style={[globalStyles.button, styles.signInButton]}
+            onPress={() =>
+              this.props.navigation.push("ScanScreen", {
+                onGoBack: () => this.refresh()
+              })
+            }
+          >
+            <Text style={[styles.signInButtonText, globalStyles.buttonText]}>
+              Scan Codes
+            </Text>
+          </TouchableOpacity>
         </View>
       </View>
     );
