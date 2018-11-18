@@ -1,4 +1,4 @@
-# SocialConnect
+# QR Card
 
 One App that allows you to connect multiple social media accounts
 
@@ -9,11 +9,11 @@ One App that allows you to connect multiple social media accounts
   - Brendan Manning
   - Rahmatullah Nekyar
 
-### WHAT IS SOCIALCONNECT?
+### WHAT IS QR Card?
 
-Social Connect is a platform where users can connect multiple social medias easily and efficiently. We provide a service that essentially saves people a lot of time and allows you to have all your social medias in one link!
+QR Card is a platform where users can connect multiple social medias easily and efficiently. We provide a service that essentially saves people a lot of time and allows you to have all your social medias in one link!
 
-### HOW DO YOU USE SOCIALCONNECT?
+### HOW DO YOU USE QR Card?
 
 The beauty of this app, is that it's so easy to use! No logins required!!
 
