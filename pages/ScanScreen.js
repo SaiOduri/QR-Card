@@ -14,7 +14,7 @@ export default class ScanScreen extends React.Component {
   render() {
     return (
       <QRCodeScanner
-        onRead={() => this.onSuccess()}
+        onRead={this.onSuccess.bind(this)}
         showMarker={true}
         reactivate={true}
         checkAndroid6Permissions={true}
