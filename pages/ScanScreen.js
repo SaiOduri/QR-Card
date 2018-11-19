@@ -5,7 +5,7 @@ import { Linking } from 'react-native';
 import QRCodeScanner from 'react-native-qrcode-scanner';
 
 export default class ScanScreen extends React.Component {
-  onSuccess(e) {
+  onSuccess = (e) => {
     Linking
       .openURL(e.data)
       .catch(err => console.error('An error occured', err));
@@ -14,7 +14,7 @@ export default class ScanScreen extends React.Component {
   render() {
     return (
       <QRCodeScanner
-        onRead={this.onSuccess.bind(this)}
+        onRead={this.onSuccess}
         showMarker={true}
         reactivate={true}
         checkAndroid6Permissions={true}
