@@ -119,7 +119,7 @@ export default class MenuScreen extends React.Component {
             }
           >
             <Text style={[styles.signInButtonText, globalStyles.buttonText]}>
-              Scan Codes
+              SCAN CODES
             </Text>
           </TouchableOpacity>
         </View>
