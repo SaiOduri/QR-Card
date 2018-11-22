@@ -74,7 +74,7 @@ export default class MenuScreen extends React.Component {
 
   render() {
     const url =
-      "https://saioduri.github.io/SocialConnect/index.html?" +
+      "https://saioduri.github.io/QR-Card/index.html?" +
       (this.state.fb != "" ? "facebook=" + this.state.fb : "") +
       (this.state.insta != "" ? "&instagram=" + this.state.insta : "") +
       (this.state.tumblr != "" ? "&tumblr=" + this.state.tumblr : "") +
@@ -108,6 +108,18 @@ export default class MenuScreen extends React.Component {
           >
             <Text style={[styles.signInButtonText, globalStyles.buttonText]}>
               CONNECT ACCOUNTS
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={[globalStyles.button, styles.signInButton]}
+            onPress={() =>
+              this.props.navigation.push("ScanScreen", {
+                onGoBack: () => this.refresh()
+              })
+            }
+          >
+            <Text style={[styles.signInButtonText, globalStyles.buttonText]}>
+              SCAN CODES
             </Text>
           </TouchableOpacity>
         </View>
