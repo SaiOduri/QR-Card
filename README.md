@@ -8,6 +8,7 @@ One App that allows you to connect multiple social media accounts
   - Frank Xu
   - Brendan Manning
   - Rahmatullah Nekyar
+  - Tony Zeng
 
 ### WHAT IS QR Card?
 
