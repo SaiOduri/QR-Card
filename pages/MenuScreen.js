@@ -43,15 +43,15 @@ export default class MenuScreen extends React.Component {
   fetchAccounts = () => {
     return new Promise((resolve, reject) => {
       this._retrieveData()
-        .then(accounts => {
-          this.setState(accounts, resolve);
+        .then( accounts => {
+          this.setState(accounts, resolve); 
         })
         .catch(e => {
           reject(e);
         })
         .finally(() => {
           console.log(this.state.tumblr);
-          this.setState({ loading: false });
+          this.setState({ loading: false }); 
         });
     });
   };

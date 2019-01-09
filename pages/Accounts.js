@@ -83,160 +83,119 @@ export default class Accounts extends React.Component {
       <ScrollView>
         <View style={styles.container}>
           <Image
-            style={localStyles.icon}
-            source={require("../images/logoicon.png")}
+            style={globalStyles.displayPicture}
+            source={require("../images/user.png")}
           />
-          <View style={styles.subContainer}>
+          <Text
+            style={[globalStyles.nameHeaderText]}
+          >
+          Tony Zeng
+          </Text>
+
+          <Text
+          style={[globalStyles.headerMiniText]}
+          >
+          Long Live @SocialConnect
+          </Text>
+          <View style={globalStyles.subContainer}>
             <TouchableOpacity
               style={[
-                globalStyles.button,
-                styles.signInButton,
-                localStyles.signUpButton
+                globalStyles.button
               ]}
             >
-              <Text
-                style={[
-                  styles.signInButtonText,
-                  globalStyles.buttonText,
-                  localStyles.signInText
-                ]}
-              >
-                Facebook
-              </Text>
+              <Image
+                style={globalStyles.miniIcon}
+                source={require("../images/Facebook.png")}            
+              />
               <TextInput
-                placeholder="Enter your Facebook"
+                style={[globalStyles.buttonNewText]}
+                placeholder="touch to edit"
+                placeholderTextColor={'#DBDBDB'}
                 value={this.state.fb}
                 onChangeText={fb => this.setState({ fb })}
               />
             </TouchableOpacity>
             <TouchableOpacity
               style={[
-                globalStyles.button,
-                styles.signInButton,
-                localStyles.signUpButton
+                globalStyles.button
               ]}
             >
-              <Text
-                style={[
-                  styles.signInButtonText,
-                  globalStyles.buttonText,
-                  localStyles.signInText
-                ]}
-              >
-                Instagram
-              </Text>
+               <Image
+                style={globalStyles.miniIcon}
+                source={require("../images/Instagram.png")}            
+              />
               <TextInput
-                placeholder="Enter your Instagram"
+                style={[globalStyles.buttonNewText]}
+                placeholder="touch to edit"
+                placeholderTextColor={'#DBDBDB'}
                 value={this.state.insta}
                 onChangeText={insta => this.setState({ insta })}
               />
             </TouchableOpacity>
             <TouchableOpacity
               style={[
-                globalStyles.button,
-                styles.signInButton,
-                localStyles.signUpButton
+                globalStyles.button
               ]}
             >
-              <Text
-                style={[
-                  styles.signInButtonText,
-                  globalStyles.buttonText,
-                  localStyles.signInText
-                ]}
-              >
-                Tumblr
-              </Text>
-              <TextInput
-                placeholder="Enter your Tumblr"
-                value={this.state.tumblr}
-                onChangeText={tumblr => this.setState({ tumblr })}
+              <Image
+                style={globalStyles.miniIcon}
+                source={require("../images/GitHub.png")}            
               />
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={[
-                globalStyles.button,
-                styles.signInButton,
-                localStyles.signUpButton
-              ]}
-            >
-              <Text
-                style={[
-                  styles.signInButtonText,
-                  globalStyles.buttonText,
-                  localStyles.signInText
-                ]}
-              >
-                Github
-              </Text>
               <TextInput
-                placeholder="Enter your Github"
+                style={[globalStyles.buttonNewText]}
+                placeholder="touch to edit"
+                placeholderTextColor={'#DBDBDB'}
                 value={this.state.github}
                 onChangeText={github => this.setState({ github })}
               />
             </TouchableOpacity>
             <TouchableOpacity
               style={[
-                globalStyles.button,
-                styles.signInButton,
-                localStyles.signUpButton
+                globalStyles.button
               ]}
             >
-              <Text
-                style={[
-                  styles.signInButtonText,
-                  globalStyles.buttonText,
-                  localStyles.signInText
-                ]}
-              >
-                LinkedIn
-              </Text>
+              <Image
+                style={globalStyles.miniIcon}
+                source={require("../images/LinkedIn.png")}            
+              />
               <TextInput
-                placeholder="Enter your LinkedIn"
+                style={[globalStyles.buttonNewText]}
+                placeholder="touch to edit"
+                placeholderTextColor={'#DBDBDB'}
                 value={this.state.linkedin}
                 onChangeText={linkedin => this.setState({ linkedin })}
               />
             </TouchableOpacity>
             <TouchableOpacity
               style={[
-                globalStyles.button,
-                styles.signInButton,
-                localStyles.signUpButton
+                globalStyles.button
               ]}
             >
-              <Text
-                style={[
-                  styles.signInButtonText,
-                  globalStyles.buttonText,
-                  localStyles.signInText
-                ]}
-              >
-                Snapchat
-              </Text>
+              <Image
+                style={globalStyles.miniIcon}
+                source={require("../images/Snapchat.png")}            
+              />
               <TextInput
-                placeholder="Enter your Snapchat"
+                style={[globalStyles.buttonNewText]}
+                placeholder="touch to edit"
+                placeholderTextColor={'#DBDBDB'}
                 value={this.state.snapchat}
                 onChangeText={snapchat => this.setState({ snapchat })}
               />
             </TouchableOpacity>
             <TouchableOpacity
               style={[
-                globalStyles.button,
-                styles.signInButton,
-                localStyles.signUpButton
+                globalStyles.button
               ]}
             >
-              <Text
-                style={[
-                  styles.signInButtonText,
-                  globalStyles.buttonText,
-                  localStyles.signInText
-                ]}
-              >
-                Twitter
-              </Text>
+              <Image
+                style={globalStyles.miniIcon}
+                source={require("../images/Twitter.png")}            
+              />
               <TextInput
-                placeholder="Enter your Twitter"
+                style={[globalStyles.buttonNewText]}
+                placeholder="touch to edit"
+                placeholderTextColor={'#DBDBDB'}
                 value={this.state.twitter}
                 onChangeText={twitter => this.setState({ twitter })}
               />
@@ -245,20 +204,16 @@ export default class Accounts extends React.Component {
             <TouchableOpacity
               onPress={() => this.onSave()}
               style={[
-                globalStyles.button,
-                styles.signInButton,
-                localStyles.signUpButton,
+                globalStyles.updateButton, 
                 { marginBottom: 20 }
               ]}
             >
               <Text
                 style={[
-                  styles.signInButtonText,
-                  globalStyles.buttonText,
-                  localStyles.signInText
+                  globalStyles.buttonUpdateText
                 ]}
               >
-                Save
+                Update
               </Text>
             </TouchableOpacity>
           </View>
