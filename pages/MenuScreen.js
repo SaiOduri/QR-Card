@@ -8,6 +8,7 @@ import {
   AsyncStorage,
   Dimensions
 } from "react-native";
+import Swiper from "react-native-swiper";
 
 import IconWithTitle from "../components/IconWithTitle";
 import styles from "../styles/loginSignup";
@@ -89,42 +90,37 @@ export default class MenuScreen extends React.Component {
     );
 
     return (
-      <View style={styles.container}>
-        <Image
-          style={localStyles.icon}
-          source={require("../images/logowhite.png")}
-        />
-        <View style={styles.subContainer}>
-          <View style={localStyles.qr}>
-            {qrCode}
+      <Swiper loop={false} showsPagination={true} paginationStyle={{bottom:"95%"}} index={1}>
+        <View style={[styles.container,]}>
+          <View style={[styles.subContainer]}>
+            <View style={{flexGrow: 3}}>
+            </View>
+            <View style={{width:"70%", flexGrow: 2}}>
+              {qrCode}
+              <Text style={globalStyles.headerMiniText}>
+                Scan the qr code and it will show your QRcard profile
+              </Text>
+            </View>
+            <View style= {{flowGrow: 2}}>
+              <TouchableOpacity
+                style={[globalStyles.menuButton]}
+                onPress={() =>
+                  this.props.navigation.push("ScanScreen", {
+                    onGoBack: () => this.refresh()
+                  })
+                }
+              >
+                <Text style={[globalStyles.buttonText]}>
+                SCAN QR CODE
+                </Text>
+              </TouchableOpacity>
+            </View>
           </View>
-          <TouchableOpacity
-            style={[globalStyles.button, styles.signInButton]}
-            onPress={() =>
-              this.props.navigation.push("Accounts", {
-                onGoBack: () => this.refresh()
-              })
-            }
-          >
-            <Text style={[styles.signInButtonText, globalStyles.buttonText]}>
-              CONNECT ACCOUNTS
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={[globalStyles.button, styles.signInButton]}
-            onPress={() =>
-              this.props.navigation.push("ScanScreen", {
-                onGoBack: () => this.refresh()
-              })
-            }
-          >
-            <Text style={[styles.signInButtonText, globalStyles.buttonText]}>
-              SCAN CODES
-            </Text>
-          </TouchableOpacity>
         </View>
-      </View>
-    );
+        <View>
+        </View>
+      </Swiper>
+    );  
   }
 }
 
@@ -135,12 +131,8 @@ const localStyles = StyleSheet.create({
   signInText: {
     color: "#F20951"
   },
-  qr: {
-    marginTop: 10
-  },
-  icon: {
-    marginTop: 50,
-    width: width,
-    resizeMode: 'contain'
+  connectButton: {
+    alignSelf: "flex-end",
+    justifyContent: "center",
   }
 });

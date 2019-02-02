@@ -203,7 +203,7 @@ export default class Accounts extends React.Component {
 
             <TouchableOpacity
               onPress={() => this.onSave()}
-              style={[
+              style={[  
                 globalStyles.updateButton, 
                 { marginBottom: 20 }
               ]}
@@ -221,21 +221,4 @@ export default class Accounts extends React.Component {
       </ScrollView>
     );
   }
-}
-
-const localStyles = StyleSheet.create({
-  signUpButton: {
-    backgroundColor: "white"
-  },
-  signInText: {
-    color: "#F20951"
-  },
-  qr: {
-    marginTop: 10
-  },
-  icon: {
-    height: 100,
-    width: 100,
-    marginTop: 50
-  }
-});
+};

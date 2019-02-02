@@ -12,6 +12,13 @@ export default StyleSheet.create({
         paddingBottom: 10,
         flexDirection: "row",
     },
+    menuButton:{
+        height: 60,
+        width: '100%',
+        paddingTop: 10,
+        paddingBottom: 10,
+        flexDirection: "column",
+    },
     updateButton: {
         height: 45,
         width: 170,
@@ -26,11 +33,11 @@ export default StyleSheet.create({
         marginTop:20,
         marginBottom:5,
     },
-    nameHeaderMiniText: {
+    headerMiniText: {
+        marginTop: 20,
         textAlign: "center",
         fontSize: 16,
         color:"#686868",
-        marginBottom:40,
     },
     displayPicture: {
         marginTop: 60,
@@ -45,9 +52,8 @@ export default StyleSheet.create({
         paddingRight: 10,
         fontSize: 15,
         textAlignVertical: "center",
-        color: "#fff",
-        fontWeight: "bold",
-
+        color: "#000000",
+        fontFamily: "Segoe UI",
     },
     buttonUpdateText: {
         fontSize: 15,
@@ -83,8 +89,14 @@ export default StyleSheet.create({
         justifyContent: "center"
       },
     subContainer: {
-        marginTop: 20,
+        marginTop: 80,
         width: "80%",
+        flex: 1,
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center"
+      },
+    subContainer2: {
         flex: 1,
         flexDirection: "column",
         alignItems: "center",
@@ -97,17 +109,12 @@ export default StyleSheet.create({
         marginTop: 20,
         marginBottom: 20
       },
-    textInput: {
-        width: "100%",
-        paddingBottom: 12,
-        color: "#4B4B4B",
-        fontSize: 20,
-        borderBottomColor: "#F5F5F5",
-        borderBottomWidth: 1,
-        textDecorationLine: "none"
-      },
     passwordInput: {
         marginTop: 40,
         marginBottom: 20
+      },
+    qr: {
+        position:"absolute",
       }
+    
 });
