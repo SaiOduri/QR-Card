@@ -25,13 +25,9 @@
         justify-content: space-between;
         align-items: center;
     }
-    .link {
-       
-    }
 </style>
 
 <body>
-      
     <center>
         <img src="images/projectlogo.png" height="150">
     </center>
@@ -90,18 +86,32 @@
             Instagram: {
                 native: "instagram://user?username={user}",
                 web: "https://www.instagram.com/{user}"
+            },
+            Twitter: {
+                
+                native: "twitter://user?id={user}",
+                web: "http://www.twitter.com/{user}"
             }
         }
 
+        var twitter = getQueryVariable("twitter")
         var facebook = getQueryVariable("facebook");
         var instagram = getQueryVariable("instagram");
         var tumblr = getQueryVariable("tumblr");
         var linkedin = getQueryVariable("linkedin");
         var github = getQueryVariable("github");
         var snapchat = getQueryVariable("snapchat");
-    
         var template = '<div class="card"><div class="card-body"><img src="images/{network}.png" height="40"><a class="link" href="{url}">Add {user}</a></div></div>';
-    
+        
+        if (twitter != undefined){
+            var row = template.replace(/{network}/g, "Twitter")
+            row = row.replace(/{url}/g, (os() == "iOS") ? URLS.twitter.native : URLS.twitter.web);
+            row = row.replace(/{user}/g, twitter);
+            
+            document.getElementById("container").innerHTML += row;
+        
+        }
+
         if (facebook != undefined) {
             var row = template.replace(/{network}/g, "Facebook")
             row = row.replace(/{url}/g, (os() == "iOS") ? URLS.Facebook.native : URLS.Facebook.web);
