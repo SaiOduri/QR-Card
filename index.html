@@ -88,7 +88,6 @@
                 web: "https://www.instagram.com/{user}"
             },
             Twitter: {
-                
                 native: "twitter://user?id={user}",
                 web: "https://www.twitter.com/{user}"
             }
@@ -109,7 +108,6 @@
             row = row.replace(/{user}/g, twitter);
             
             document.getElementById("container").innerHTML += row;
-        
         }
 
         if (facebook != undefined) {
@@ -118,7 +116,6 @@
             row = row.replace(/{user}/g, facebook);
     
             document.getElementById("container").innerHTML += row;
-
         }
 
         if (instagram != undefined) {
