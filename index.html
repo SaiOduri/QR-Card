@@ -16,7 +16,6 @@
     .card {
         background-color: rgb(248,248,248);
         border-color: transparent;
-  
         margin: 8px 8px 8px 8px;
     }   
     .card-body {
@@ -104,7 +103,7 @@
         
         if (twitter != undefined){
             var row = template.replace(/{network}/g, "Twitter")
-            row = row.replace(/{url}/g, (os() == "iOS") ? URLS.twitter.native : URLS.twitter.web);
+            row = row.replace(/{url}/g, (os() == "iOS") ? URLS.Twitter.native : URLS.Twitter.web);
             row = row.replace(/{user}/g, twitter);
             
             document.getElementById("container").innerHTML += row;
