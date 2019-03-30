@@ -16,7 +16,6 @@
     .card {
         background-color: rgb(248,248,248);
         border-color: transparent;
-  
         margin: 8px 8px 8px 8px;
     }   
     .card-body {
@@ -93,22 +92,14 @@
             }
         }
 
-        var twitter = getQueryVariable("twitter")
         var facebook = getQueryVariable("facebook");
         var instagram = getQueryVariable("instagram");
+        var twitter = getQueryVariable("twitter");
         var tumblr = getQueryVariable("tumblr");
         var linkedin = getQueryVariable("linkedin");
         var github = getQueryVariable("github");
         var snapchat = getQueryVariable("snapchat");
         var template = '<div class="card"><div class="card-body"><img src="images/{network}.png" height="40"><a class="link" href="{url}">Add {user}</a></div></div>';
-        
-        if (twitter != undefined){
-            var row = template.replace(/{network}/g, "Twitter")
-            row = row.replace(/{url}/g, (os() == "iOS") ? URLS.twitter.native : URLS.twitter.web);
-            row = row.replace(/{user}/g, twitter);
-            
-            document.getElementById("container").innerHTML += row;
-        }
 
         if (facebook != undefined) {
             var row = template.replace(/{network}/g, "Facebook")
@@ -123,6 +114,14 @@
             row = row.replace(/{url}/g, (os() == "iOS") ? URLS.Instagram.native : URLS.Instagram.web);
             row = row.replace(/{user}/g, instagram);
     
+            document.getElementById("container").innerHTML += row;
+        }
+
+        if (twitter != undefined){
+            var row = template.replace(/{network}/g, "Twitter")
+            row = row.replace(/{url}/g, (os() == "iOS") ? URLS.Twitter.native : URLS.Twitter.web);
+            row = row.replace(/{user}/g, twitter);
+            
             document.getElementById("container").innerHTML += row;
         }
 
